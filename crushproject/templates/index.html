@@ -1,0 +1,216 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise 💗</title>
+
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="animals">
+
+            <div class="cat">
+                🐱
+            </div>
+
+            <div class="dog">
+                🐶
+            </div>
+
+        </div>
+
+        <p class="small-title">
+            A little surprise for you...
+        </p>
+
+        <h1>
+            Hey, You! 💗
+        </h1>
+
+        <p class="hero-text">
+            I made this tiny website<br>
+            just to make you smile.
+        </p>
+
+        <button onclick="startJourney()" class="main-btn">
+            Let's Go ✨
+        </button>
+
+    </section>
+
+
+    <!-- MESSAGE 1 -->
+
+    <section class="story hidden" id="story">
+
+        <div class="story-card">
+
+            <div class="character">
+                🐱
+            </div>
+
+            <h2>
+                Wait a second...
+            </h2>
+
+            <p>
+                Someone has a little surprise
+                waiting for you.
+            </p>
+
+            <button onclick="nextStory()" class="main-btn">
+                Continue 💕
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE 2 -->
+
+    <section class="story hidden" id="story2">
+
+        <div class="story-card">
+
+            <div class="character">
+                🐶
+            </div>
+
+            <h2>
+                One random meeting...
+            </h2>
+
+            <p>
+                Sometimes a small moment
+                becomes a beautiful memory.
+            </p>
+
+            <button onclick="showSurprise()" class="main-btn">
+                See Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SURPRISE -->
+
+    <section class="surprise hidden" id="surprise">
+
+        <p class="small-title">
+            Something I wanted you to see...
+        </p>
+
+        <h2>
+            Your Surprise 🎀
+        </h2>
+
+        <div class="image-container">
+
+            <img
+                src="{% static 'images/surprise.jpg' %}"
+                alt="Surprise"
+            >
+
+        </div>
+
+        <p class="surprise-text">
+            So... what do you think? 👀
+        </p>
+
+
+        <!-- Quick reactions -->
+
+        <div class="reactions">
+
+            <button onclick="selectReaction('Cute ❤️')">
+                Cute ❤️
+            </button>
+
+            <button onclick="selectReaction('Sweet 🥹')">
+                Sweet 🥹
+            </button>
+
+            <button onclick="selectReaction('Unexpected 😂')">
+                Unexpected 😂
+            </button>
+
+        </div>
+
+
+        <!-- Message -->
+
+        <div class="response-box">
+
+            <h3>
+                Or tell me what you think 💌
+            </h3>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Type your thoughts..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="send-btn">
+                    Send 💌
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Made with a little courage & lots of good vibes ❤️
+
+    </footer>
+
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
